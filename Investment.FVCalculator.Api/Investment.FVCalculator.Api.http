@@ -1,0 +1,6 @@
+@Investment.FVCalculator.Api_HostAddress = http://localhost:5052
+
+GET {{Investment.FVCalculator.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Investment.FVCalculator.Api", "Investment.FVCalculator.Api\Investment.FVCalculator.Api.csproj", "{9ECB3402-E581-48BD-830E-94C33868B15A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Investment.FVCalculator.Common", "Investment.FVCalculator.Common\Investment.FVCalculator.Common.csproj", "{21A3963A-FA73-45CE-B644-66022959C75F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9ECB3402-E581-48BD-830E-94C33868B15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ECB3402-E581-48BD-830E-94C33868B15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ECB3402-E581-48BD-830E-94C33868B15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ECB3402-E581-48BD-830E-94C33868B15A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21A3963A-FA73-45CE-B644-66022959C75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21A3963A-FA73-45CE-B644-66022959C75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21A3963A-FA73-45CE-B644-66022959C75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21A3963A-FA73-45CE-B644-66022959C75F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE7373E7-9915-407D-9A7E-3254D939ED7D}
+	EndGlobalSection
+EndGlobal
