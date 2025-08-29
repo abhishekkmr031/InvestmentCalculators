@@ -1,14 +1,14 @@
 ﻿using Investment.FVCalculator.Common.Models;
 
-namespace Investment.FVCalculator.Api.Services;
+namespace Investment.FVCalculator.Application.Services;
 
-public class MultiAssetsFVServices : IMultiAssetsFVServices
+public class MultiAssetsFvServices : IMultiAssetsFvServices
 {
-    public FVValue CalculateAssestFV(Asset asset)
+    public FVValue CalculateAssetsFv(Asset asset)
     {
         var response = new FVValue();
 
-       (response.FutureValue,response.Investment, response.TotalInterest) = CalculatePortfolio(asset.StartAmount, asset.SIPAmount, asset.Interest, asset.InvestYears, asset.HoldYears);
+        (response.FutureValue, response.Investment, response.TotalInterest) = CalculatePortfolio(asset.StartAmount, asset.SIPAmount, asset.Interest, asset.InvestYears, asset.HoldYears);
 
         response.Name = asset.Name;
         response.Interest = asset.Interest;
@@ -28,7 +28,7 @@ public class MultiAssetsFVServices : IMultiAssetsFVServices
     {
         double r = annualRate / 100 / 12;
         int investMonths = investYears * 12;
-        int holdMonths = (holdYears-investYears) * 12;
+        int holdMonths = (holdYears - investYears) * 12;
 
         // 1. Lump sum grows for investYears + holdYears
         double lumpFV = (double)initialLumpSum * Math.Pow(1 + r, investMonths + holdMonths);

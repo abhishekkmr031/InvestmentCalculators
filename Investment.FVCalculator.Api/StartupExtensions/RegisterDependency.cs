@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Investment.FVCalculator.Api.Services;
+//using Investment.FVCalculator.Applicaion.Services;
 using Investment.FVCalculator.Common.Models;
 using Investment.FVCalculator.Common.Validators;
 
@@ -9,7 +9,7 @@ namespace Investment.FVCalculator.Api.StartupExtensions
     {
         internal static void RegisterDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IMultiAssetsFVServices, MultiAssetsFVServices>();
+            //services.AddScoped<IMultiAssetsFVServices, MultiAssetsFVServices>();
             services.AddScoped<IValidator<Asset>, AssetRequestValidators>();
         }
     }
