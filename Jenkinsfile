@@ -42,7 +42,7 @@ pipeline {
         stage('Publish Artifacts') {
             steps {
                 // Publish your web project to a directory named 'published'
-                sh 'dotnet publish ${BUILD_CONFIGURATION} --no-restore --configuration ${BUILD_CONFIGURATION} -o published'
+                sh 'dotnet publish ${SOLUTION_FILE} --no-restore --configuration ${BUILD_CONFIGURATION} -o published'
 
                 // Archive the published output as a build artifact in Jenkins
                 archiveArtifacts artifacts: 'published/**/*', fingerprint: true
