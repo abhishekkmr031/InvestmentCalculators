@@ -32,7 +32,7 @@ pipeline {
         stage('Test') {
             steps {
                 // Run tests, assuming you have a test project in your solution
-                sh 'dotnet test ${BUILD_CONFIGURATION} --no-build --no-restore --configuration ${BUILD_CONFIGURATION}'
+                sh 'dotnet test ${SOLUTION_FILE} --no-build --no-restore --configuration ${BUILD_CONFIGURATION}'
                 
                 // You can add logic here to publish test results if you have the JUnit plugin installed
                 // e.g., junit '**/TestResults/*.trx'
