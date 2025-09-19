@@ -1,14 +1,11 @@
 pipeline {
     agent any
 
-    tools {
-        dotnet 'dotnet' // <-- Add this line
-    }
-
-    // Build configuration, e.g., 'Release' or 'Debug'
+    environment {
         BUILD_CONFIGURATION = 'Release'
-        // Specify a project file or a solution file. This is especially useful for complex solutions.
         SOLUTION_FILE = 'investment-calculator.sln'
+}
+
 
     stages {
         stage('Checkout') {
