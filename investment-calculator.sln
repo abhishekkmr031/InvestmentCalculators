@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36221.1 d17.14
+VisualStudioVersion = 17.14.36221.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Investment.FVCalculator.Api", "Investment.FVCalculator.Api\Investment.FVCalculator.Api.csproj", "{9ECB3402-E581-48BD-830E-94C33868B15A}"
 EndProject
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Investment.FVCalculator.App
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1602AAD3-D969-42F1-9446-7BFBAB20A14F}"
 	ProjectSection(SolutionItems) = preProject
-		compose.yaml = compose.yaml
+		Jenkinsfile = Jenkinsfile
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Investment.FVCalculator.Application.UnitTests", "Investment.FVCalculator.Application.UnitTests\Investment.FVCalculator.Application.UnitTests.csproj", "{70EDE370-3E68-4018-9D27-A53654D0C9DC}"
