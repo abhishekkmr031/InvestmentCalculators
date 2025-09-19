@@ -1,10 +1,14 @@
 pipeline {
     agent any
 
-    // Environment variables can be defined here if needed, e.g., for setting a specific .NET path
-    // environment {
-    //     DOTNET_HOME = 'C:\\Program Files\\dotnet'
-    // }
+    tools {
+        dotnet 'dotnet' // <-- Add this line
+    }
+
+    // Build configuration, e.g., 'Release' or 'Debug'
+        BUILD_CONFIGURATION = 'Release'
+        // Specify a project file or a solution file. This is especially useful for complex solutions.
+        SOLUTION_FILE = 'investment-calculator.sln'
 
     stages {
         stage('Checkout') {
@@ -17,21 +21,21 @@ pipeline {
         stage('Restore Dependencies') {
             steps {
                 // Use the 'bat' command for Windows agents or 'sh' for Linux/macOS
-                sh 'dotnet restore'
+                sh 'dotnet restore ${SOLUTION_FILE}'
             }
         }
 
         stage('Build') {
             steps {
                 // Build the entire solution. Use --configuration Release for a release build.
-                sh 'dotnet build --no-restore --configuration Release'
+                sh 'dotnet build ${SOLUTION_FILE} --no-restore --configuration ${BUILD_CONFIGURATION}'
             }
         }
 
         stage('Test') {
             steps {
                 // Run tests, assuming you have a test project in your solution
-                sh 'dotnet test --no-build --no-restore --configuration Release'
+                sh 'dotnet test ${BUILD_CONFIGURATION} --no-build --no-restore --configuration ${BUILD_CONFIGURATION}'
                 
                 // You can add logic here to publish test results if you have the JUnit plugin installed
                 // e.g., junit '**/TestResults/*.trx'
@@ -41,7 +45,7 @@ pipeline {
         stage('Publish Artifacts') {
             steps {
                 // Publish your web project to a directory named 'published'
-                sh 'dotnet publish --no-restore --configuration Release -o published'
+                sh 'dotnet publish ${BUILD_CONFIGURATION} --no-restore --configuration ${BUILD_CONFIGURATION} -o published'
 
                 // Archive the published output as a build artifact in Jenkins
                 archiveArtifacts artifacts: 'published/**/*', fingerprint: true
